@@ -1,0 +1,83 @@
+<html>
+
+<head>
+
+          {% load static %}
+
+    <!-- Bootstrap -->
+    <link href="{% static 'historial/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+     <!-- Fonts -->
+    
+     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet"> 
+     <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+     
+
+    <!-- Styles -->
+    <link href="{% static 'historialapp/css/gestion.css' %}" rel="stylesheet">
+</head>
+
+<body>
+
+    <h1 class="site-heading text-center text-white d-none d-lg-block">
+      
+        <span class="site-heading-lower">OBSEQUIOS</span>
+      </h1>
+
+
+ 
+ 
+
+   <!-- Heading -->
+    {% if comprado %}
+   <section class="page-section clearfix">
+    <div class="container">
+      <div class="intro">
+           
+        <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+
+          <h2 class="section-heading mb-4" >compra sadisfactoria.           
+            
+            
+            <a class="nav-link text-uppercase text-expanded" href="/historial/"> Ir al historial</a>
+          
+          </h2>
+          
+        
+        </div>
+      </div>
+    </div>
+  </section>
+    {% else %}
+    <section class="page-section clearfix">
+        <div class="container">
+          <div class="intro">
+           
+            <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+
+              <h2 class="section-heading mb-4" >compra errada.           
+                
+                
+                <a class="nav-link text-uppercase text-expanded" href="/historial/"> Ir al historial</a>
+              
+              </h2>
+              
+            
+            </div>
+          </div>
+        </div>
+      </section>
+    {% endif %}
+
+
+
+
+
+    <!-- Bootstrap -->
+    <script src="{% static 'auxapp/vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'auxapp/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+</body>
+
+
+</html>

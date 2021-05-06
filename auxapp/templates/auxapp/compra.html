@@ -1,0 +1,152 @@
+
+<html >
+  
+    <head>
+      {% load static %}
+  
+      
+  
+      <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/carousel/">
+  
+      <!-- Bootstrap core CSS -->
+  <link href="{% static 'auxapp/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  
+      <style>
+        .bd-placeholder-img {
+          font-size: 1.125rem;
+          text-anchor: middle;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+        }
+  
+        @media (min-width: 768px) {
+          .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+          }
+        }
+
+      </style>
+      <!-- Custom styles for this template -->
+      <link href="{% static 'tiapp/css/carousel.css' %}" rel="stylesheet">
+    </head>
+    <body>
+      <header>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+     
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+
+
+<ul class="navbar-nav mr-auto">
+    <li class="nav-item active">
+      <a class="nav-link" href="{% url 'home' %}">Inicio <span class="sr-only">(current)</span></a>
+    </li>
+  </li>
+  <li class="nav-item active">
+    <a class="nav-link" href="/tienda/1/1/" >tienda</a>
+  </li>
+  {%if identificado == False %}
+    <li class="nav-item active">
+      <a class="nav-link" href="/ident/registro/">Registro</a>
+    </li>
+    <li class="nav-item active">
+      <a class="nav-link" href="/ident/" >identificación</a>
+    </li>
+  {% else %}
+    <li class="nav-item active">
+      <a class="nav-link" href="/historial/" >historial</a>
+    </li>
+    <li class="nav-item active">
+      <a class="nav-link" href="/ident/logout/" >cerrar sesión</a>
+    </li>
+    <li class="nav-item active">
+      <p class="nav-link">tienes {{puntosuser}} puntos</p>>
+    </li>
+  {% endif %}
+  </ul>
+      </div>
+    </nav>
+  </header>
+  
+  <main role="main">
+    <hr class="featurette-divider">
+
+
+          <div class="row featurette">
+            <div class="col-md-7">
+              <h2 class="featurette-heading">{{productosaux.name}}</h2>
+              <p class="lead">{{productosaux.points}} PUNTOS</p>
+              {% if  compra %}
+                
+              
+                  
+                <a href="/historial/comprado/{{produc}}/">comprar</a>
+                  
+              {% endif %}
+            </div>
+            <div class="col-md-5">
+              <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" src="{{productosaux.picture1.url}}" width="500" height="500" preserveAspectRatio="xMidYMid slice" focusable="false" >
+            </div>
+          </div>
+      
+          <hr class="featurette-divider">
+      
+          <div class="row featurette">
+            <div class="col-md-7 order-md-2">
+              <h2 class="featurette-heading">Descripción </h2>
+              <p class="lead">{{productosaux.description}}</p>
+            </div>
+            <div class="col-md-5 order-md-1">
+              <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" src="{{productosaux.picture2.url}}" width="500" height="500" preserveAspectRatio="xMidYMid slice" focusable="false" >
+            </div>
+          </div>
+      
+          <hr class="featurette-divider">
+      
+          <div class="row featurette">
+            <div class="col-md-7">
+              <h2 class="featurette-heading">Descripción ampliada</h2>
+              <p class="lead">{{productosaux.description2}}</p>
+            </div>
+            <div class="col-md-5">
+              <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" src="{{productosaux.picture3.url}}" width="500" height="500" preserveAspectRatio="xMidYMid slice" focusable="false" >
+            </div>
+          </div>
+           
+      
+     
+   
+  
+  
+    <!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+  
+ 
+  
+  
+      <!-- START THE FEATURETTES -->
+  
+      
+  
+     
+  
+      <hr class="featurette-divider">
+  
+      <!-- /END THE FEATURETTES -->
+  
+    </div><!-- /.container -->
+  
+  
+    <!-- FOOTER -->
+    <footer class="container">
+      <p class="float-right"><a href="#">Back to top</a></p>
+      <p>&copy; 2017-2020 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+    </footer>
+  </main>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="{% static 'tiapp/vendor/bootstrap/jquery/jquery.slim.min.js' %}"></script>
+  <script src="{% static 'tiapp/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  </html>
+  

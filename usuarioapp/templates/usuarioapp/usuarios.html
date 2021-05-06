@@ -1,0 +1,12 @@
+{% raw %}
+  {% extends "base.html" %}
+  {% block content %}
+  <h2>usuarios</h2>
+<em>usuario - id</em>
+<ul>
+    {% for persona in object_list %}
+      <li>{{ persona.name }} - {{ persona.id }} </li>
+    {% endfor %}
+  </ul>
+  {% endblock %}
+{% endraw %}

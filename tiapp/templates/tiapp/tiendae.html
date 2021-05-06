@@ -1,0 +1,72 @@
+{% extends "tiapp/basetienda1.html" %}
+
+{% load static %}
+
+{% block content %}
+ <!-- Navbar -->
+ <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="{% url 'home' %}">Gestión de Pedidos</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item {% if request.path == '/tiendae' %}active{% endif %} px-lg-4">
+          <a class="nav-link text-uppercase text-expanded" href="{% url 'tiendae' %}">Tiendae</a>
+        </li>
+        <li class="nav-item {% if request.path == '/historial' %}active{% endif %} px-lg-4">
+          <a class="nav-link text-uppercase text-expanded" href="{% url 'historial' %}">Historial</a>
+        </li>
+        <li class="nav-item {% if request.path == '/' %}active{% endif %} px-lg-4">
+          <a class="nav-link text-uppercase text-expanded" href="{% url 'compra' %}">Compra</a>
+        </li>
+        <li class="nav-item {% if request.path == '/' %}active{% endif %} px-lg-4">
+          <a class="nav-link text-uppercase text-expanded" href="{% url 'retorno' %}">Retorno</a>
+        </li>
+
+       
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+ <!-- Heading -->
+ <section class="page-section clearfix">
+  <div class="container">
+    <div class="intro">
+      <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{% static 'tiapp/img/principal.jpg' %}" alt="">
+      <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+        <h2 class="section-heading mb-4" >
+          <span class="section-heading-upper">Puntualidad</span>
+          <span class="section-heading-lower">El mejor stock</span>
+        </h2>
+        <p class="mb-3">En la puertra de tu casa en menos de 48 h con el envío normal. En menos de 24 h con el envío express.
+        </p>
+       
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Message -->
+    <section class="page-section cta">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-9 mx-auto">
+            <div class="cta-inner text-center rounded">
+              <h2 class="section-heading mb-4">
+                <span class="section-heading-upper">Compromiso total</span>
+                <span class="section-heading-lower">Garantizado</span>
+              </h2>
+              <p class="mb-0">Con más de 75 años de experiencia a nuestras espaldas, desde Gestión de Pedidos tenemos los conocimientos y herramientas necesarios para llevar cualquier objeto a la puerta de su casa con puntualidad y profesionalidad.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+{% endblock %}
